@@ -1,0 +1,43 @@
+/*
+ * This is a JavaScript Scratchpad.
+ *
+ * Enter some JavaScript, then Right Click or choose from the Execute Menu:
+ * 1. Run to evaluate the selected text (Ctrl+R),
+ * 2. Inspect to bring up an Object Inspector on the result (Ctrl+I), or,
+ * 3. Display to insert the result in a comment after the selection. (Ctrl+L)
+ */
+
+let s="";
+let i=0;
+let size=8;
+while(i<8)
+{
+    for(j=0;j<4;j++)
+    {
+        if(i%2===0)
+            s+=" " +"#";
+        else
+        {
+            s+="#"+" ";
+        }
+    }
+    s+="\n";
+    i++;
+}
+console.log(s);
+/*
+Exception: Component returned failure code: 0x8007000e (NS_ERROR_OUT_OF_MEMORY) [nsIXPCComponents_Utils.evalInSandbox]
+@333
+*/
+/*
+Exception: Component returned failure code: 0x8007000e (NS_ERROR_OUT_OF_MEMORY) [nsIXPCComponents_Utils.evalInSandbox]
+@333
+*/
+/*
+Exception: Component returned failure code: 0x8007000e (NS_ERROR_OUT_OF_MEMORY) [nsIXPCComponents_Utils.evalInSandbox]
+@333
+*/
+/*
+Exception: Component returned failure code: 0x8007000e (NS_ERROR_OUT_OF_MEMORY) [nsIXPCComponents_Utils.evalInSandbox]
+@333
+*/

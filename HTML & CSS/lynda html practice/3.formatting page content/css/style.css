@@ -1,0 +1,48 @@
+html,body{
+    background: rgb(141,63,148);
+    margin:0;
+}
+body{
+    font-family: Verdana,Arial,sans-serif;
+    width:80%;
+    margin:0 auto;
+    background-color: white;
+    padding:10px;
+    font-size:100%;
+    line-height:1.6;
+}
+h1,h2,h3{
+    margin:0;
+    padding:0;
+}
+#right_image{
+    float:right;
+    margin-left:10px;
+}
+#left_image{
+    float:left;
+    margin-right:10px;
+}
+h2{
+    color:darkgrey;
+    font-size:300%;
+}
+h3{
+    color:darkgrey;
+}
+h1{
+    color:grey;
+}
+p{
+    line-height: 1.5em;
+}
+a{
+    color:orange;
+}
+pre{
+    border-left: 1em solid #A68048;
+    background-color:#666;
+    color:white;
+    width:80%;
+    padding:1.4em;
+}

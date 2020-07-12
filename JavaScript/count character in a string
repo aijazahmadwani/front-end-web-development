@@ -1,0 +1,28 @@
+/*
+ * This is a JavaScript Scratchpad.
+ *
+ * Enter some JavaScript, then Right Click or choose from the Execute Menu:
+ * 1. Run to evaluate the selected text (Ctrl+R),
+ * 2. Inspect to bring up an Object Inspector on the result (Ctrl+I), or,
+ * 3. Display to insert the result in a comment after the selection. (Ctrl+L)
+ */
+function countChar(s,char){
+let i = 0,count=0;
+    while(i<s.length){
+        if(s[i]===char)
+        count++;
+    i++;
+    }
+   return count;
+    
+}
+
+console.log(countChar("BiBsjkd","m"));
+/*
+Exception: missing ( before let head
+@Scratchpad/4:10
+*/
+/*
+Exception: countBs is not defined
+@Scratchpad/4:20
+*/

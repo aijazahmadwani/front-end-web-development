@@ -1,0 +1,29 @@
+
+function fun1(start,end){
+    var a=[];
+    let j=start;
+    while(j<=end){
+        a.push(j);
+        j++;
+     }
+        
+    return a;
+
+}
+
+
+function sum(a)
+{
+    let i=0;
+    let sum=0;
+    while(i<a.length){
+        sum+=a[i];
+        i++;
+    
+    }
+ return sum;   
+}
+console.log(fun1(5,10));
+let a=[1,2,3,4,5,6,7,8,9,10];
+console.log(sum(a));
+

@@ -1,0 +1,132 @@
+.bgimage{
+	background-image: url('../images/body.jpg');
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	width: 100%;
+	height: 600px;
+}
+.headerset{
+	padding-top: 250px;
+	box-sizing: border-box;
+}
+
+.headerset h2{
+	font-size: 40px;
+}
+
+.headerset h1{
+	font-size: 65px;
+	font-weight: bold;
+}
+
+/*...................................our service/...............*/
+.ourservice{
+	padding: 100px  0px 60px;
+	height: 700px;
+
+}
+.ourservice h1{
+	font-size: 50px;
+	font-weight: bold;
+}
+.rowsetting{
+	margin: 80px 0px;
+}
+.imgsetting{
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+.fa-shopping-cart{
+	margin: 20px;
+}
+.fa-desktop{
+	margin: 25px;
+}
+.fa-lock{
+	margin: 20px;
+}
+.rowsetting h2{
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 30px;
+}
+.rowsetting p{
+	padding: 10px;
+	color:#6c757d;
+}
+
+/****************portfolio************
+*/
+
+.portfolio{
+	height: 1100px;
+	width: 100%;
+	padding:100px 0px 50px;
+}
+.portfolio h1{
+	font-size: 50px;
+	font-weight: bold;
+}
+.card{
+	margin-top: 40px;
+}
+
+/**********************ourteam********************************
+*/.ourteam{
+	margin-top: 150px;
+	height: 700px;
+	padding: 100px 0px 60px;
+	width: 100%; 
+}
+.ourteam h1{
+	font-size: 50px;
+	font-weight: bold;
+}
+.teamsetting{
+	margin-top: 50px !important;
+}
+
+/*****************footer****************/
+.footer{
+	height: 30px;
+}
+.footer h6{
+	line-height: 30px;
+}
+
+
+/*******************responsive******************/
+@media(min-width: 992px){
+
+}
+@media(min-width: 768px) and (max-width: 991){
+
+}
+@media(min-width: 575px) and (max-width: 767px){
+
+}
+@media(min-width: 480px) and (max-width: 574px){
+
+}
+@media(max-width: 479px){
+	.headerset h2{
+	font-size: 22px;
+}
+
+	.headerset h1{
+	font-size: 42px;
+	font-weight: bold;
+}	
+
+.ourservice{
+	height: 1200px;
+
+}
+.portfolio{
+	height:2700px;
+}
+.ourteam{
+	height: 1500px
+}
+}

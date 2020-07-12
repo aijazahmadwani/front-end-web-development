@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Styling fieldset and legends</title>
+	<style type="text/css">
+		body{
+			font-family: Arial;
+			color: #665544;
+		}
+		input {
+				border-bottom: 1px dotted #dcdcdc;
+				border-top: none;
+				border-right: none;
+				border-left: none;
+				padding: 5px;
+				width: 280px;
+				margin-bottom: 20px;}
+		input:focus {
+				border: 3px double #dcdcdc;
+				
+			}
+			input#submit {
+				color: #ffffff;
+				background-color: #665544;
+				border: none;
+				border-radius: 5px;
+				width: 80px;}
+			input#submit:hover {
+				color: #665544;
+				background-color: #efefef;}
+			fieldset {
+				width: 350px;
+				border: 1px solid #dcdcdc;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: left;}
+			legend {
+				background-color: #efefef;
+				border: 1px solid #dcdcdc;
+				border-radius: 10px;
+				padding: 10px 20px;
+				text-align: left;}
+	</style>
+</head>
+<body>
+	<form>
+	<fieldset>
+		<legend>NEWSLETTER</legend>
+		<p>Name:</p><input type="text" name="username" maxlength="30">
+		<p>Email:</p><input type="email" name="email">
+		<input type="submit" value="Register" id="submit">
+	</fieldset>
+	</form>
+</body>
+</html>

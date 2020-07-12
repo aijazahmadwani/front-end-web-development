@@ -1,0 +1,32 @@
+body{
+	width:80%;
+	text-align: center;
+	margin:0 auto;
+}
+#content{
+	overflow:auto;
+}
+li{
+	display: inline;
+	padding:0.5em;
+}
+#navigation, #feature, #footer{
+	margin:1%;
+}
+.column1,.column2, .column3{
+	float:left;
+	width:31%;
+	margin:1%;
+}
+.column3{
+	margin-right: auto;
+}
+#navigation, #footer {
+	background-color: #efefef;
+	padding: 0.5em 0;
+}
+#feature, .article {
+	height: 10em;
+	margin-bottom: 1em;
+	background-color: #efefef;
+}

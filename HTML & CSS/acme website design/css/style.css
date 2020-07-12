@@ -1,0 +1,145 @@
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin:0;
+	background-color: #4f4f4f;
+
+}
+/* Global*/
+.container{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+
+}
+.button_1{
+	height: 38px;
+	background:#e8491d;
+	border: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	color:#ffffff;
+	border-radius: 15px;
+	border-outline:none;
+}
+/*header*/
+header{
+	background: #35424a;
+	color:#ffffff;
+	padding-top: 20px;
+	min-height: 70px;
+	border-bottom: #e8491d 3px solid;
+}
+header a{
+	color:#ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+header ul{
+	margin: 0;
+	padding:0;
+
+}
+header li{
+	display:inline;
+	float: left;
+	padding:0 20px 0 20px;
+}
+
+header #branding{
+	float:left;
+}
+header #branding h1{
+	margin: 0;
+
+}
+header nav{
+	float :right;
+}
+header .highlight,header .current a{
+	color:#e8491d;
+	font-weight: bold;
+}
+header a:hover{
+	color: #cccccc;
+	font-weight: bold;
+
+}
+
+/*showcase */
+#showcase{
+	min-height: 400px;
+	background:url('../images/showcase.png')0 50px;
+	background-repeat: no-repeat;
+	text-align:center;
+	color: #ffffff;
+	background-size: cover;
+	background-position: center;
+	max-width: 100%;
+	height: auto;
+}
+ #showcase h1{
+ 	margin-top: 70px;
+ 	font-size: 55px;
+ 	margin-bottom: 10px;
+ }
+ #showcase p{
+ 	font-size:20px;
+ }
+ /*newsletter*/
+ #newsletter{
+ 	padding:15px;
+ 	color:#ffffff;
+ 	background:#35424a;
+ 	margin: 0;
+
+ }
+ #newsletter h1{
+ 	float:left;
+ }
+ #newletter form{
+ 	float:right;
+
+ }
+
+ #newsletter input [type="email"]{
+ 	padding:4px;
+ 	width: 250px;
+ 	height: 25px;
+
+ }
+ /*boxes*/
+#boxes{
+	margin-top: 20px;
+}
+#boxes .box{
+	float:left;
+	text-align: center;
+	width: 30%;
+	padding:10px;
+}
+#boxes .box img{
+	width: 220px;
+}
+/*  sidebar*/
+aside#sidebar{
+	float:right;
+	widht:30%;
+	margin-top:10px;
+
+}
+article #main_col{
+	float:left;
+	width:65%;
+}
+
+footer{
+	padding: 20px;
+	margin:20px;
+	color:#ffffff;
+	background-color: #e8491d;
+	text-align: center;
+}

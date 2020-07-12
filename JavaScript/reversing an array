@@ -1,0 +1,32 @@
+
+
+function reverseArray(a){
+    let n=[];
+    let j=a.length;
+    while(j>0){
+        n.push(j);
+        j--;
+    }
+    return n;
+}
+let a=[1,2,3,4,5,6];
+console.log(reverseArray(a));
+
+function reverseArrayInPlace(a){
+    let i=0;
+    let j=a.length-1;
+    let temp;
+    while(j>=(a.length)/2)
+    {
+        temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+        j--;
+        i++;
+        
+    }
+    return a;
+}
+let b=[11,22,33,44,55];
+console.log(reverseArrayInPlace(b));
+

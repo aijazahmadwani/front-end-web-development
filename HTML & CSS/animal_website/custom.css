@@ -1,0 +1,65 @@
+
+.hero_image{
+    font-family: sans-serif;
+    background: url("images/background.jpg") no-repeat;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+.hero_wrapper{
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.hero_wrapper h1{
+    text-align: center;
+    font-size: 2.3rem;
+}
+.hero_wrapper span{
+    display: block;
+    margin-left: 4rem;
+    margin-bottom: .5rem;
+}
+.form_code{
+    text-align: center;
+}
+.form_code .post_code {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2rem;
+    padding: .6rem;
+    border: none;
+    outline: none;
+}
+
+.form_code button{
+    display: block;
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:maroon;
+    color: white;
+    padding: .6rem;
+    border: none;
+    outline: none;
+    border-radius: .3rem;
+    margin-top: 1rem;
+    
+}
+
+.products{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    font-family: serif;
+}
+.product_list{
+    float: left;
+    width: 30%;
+    margin-right: .2%;
+}
