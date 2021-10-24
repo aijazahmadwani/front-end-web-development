@@ -1,0 +1,14 @@
+.card{
+	border:0px !important; 
+}
+/*.card-body{
+	padding-left: 0px !important;
+}*/
+.testimonial-img{
+	width: 98px !important;
+	height:98px !important;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
