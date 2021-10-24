@@ -1,0 +1,75 @@
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: url('./bg.jpg') no-repeat top center / cover rgb(56, 165, 238, 0.5);
+  
+
+}
+
+nav {
+  background-color: rgb(14, 67, 77) !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: rgb(250, 205, 7)!important;
+}
+
+.l1:hover .l1-ul {
+  display: block;
+}
+
+.l2:hover .l2-ul {
+  display: block;
+}
+
+.l3:hover .l3-ul {
+  display: block;
+}
+
+.dropdown-item:hover {
+  color: #fff;
+  background-color: rgb(20, 139, 139);
+}
+
+.ul-heading {
+  font-weight: 1.3rem;
+  color: rgb(180, 14, 14);
+  font-weight: 500;
+  padding: .5rem;
+}
+
+@media (min-width: 991px) {
+  .dropdown-menu {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width:768px) {
+  .dropdown-menu {
+    margin-left: 1rem !important;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file">
+    <a href="" id="view" target="_blank"> view</a>
+    <script>
+   document.querySelector('input').onchange = e => {
+        const file = e.target.files[0]; // this Object holds a reference to the file on disk
+        const url = URL.createObjectURL(file); // this points to the File object we just created
+        console.log(url);
+        let a = document.getElementById("view")
+        a.href=url
+        //document.querySelector('img').src = url;
+    };
+    </script>
+</body>
+
+</html>

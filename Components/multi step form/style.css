@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body, input {
+    font-family: 'Roboto', serif;
+}
+
+#recruitmentForm {
+    background-color: #fff;
+}
+
+.btn:hover, .btn:active {
+    border: none;
+    /* color: #fff; */
+}
+
+#prevBtn:hover {
+    background-color: #fff;
+    border: 3px solid #1A00F2;
+    color: #1A00F2;
+}
+
+#prevBtn {
+    color: #1A00F2;
+    border: 3px solid #1A00F2;
+}
+
+#nextBtn {
+    color: #fff;
+    border: none;
+    background: #1A00F2;
+}
+
+/* Hide all steps by default: */
+
+.tab {
+    display: none;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Make circles that indicate the steps of the form: */
+
+.step {
+    color: #fff;
+    height: 48px;
+    width: 48px;
+    padding: 10px;
+    background-color: #770713;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+    font-size: 1rem;
+}
+
+/* Mark the active step: */
+
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+
+.step.finish {
+    background-color: #0c9511;
+}
+
+/*########################################## custom  */
+
+.secondQual {
+    display: none;
+}
+
+.deleteQualBtn {
+    height: fit-content;
+    margin-bottom: 1rem !important;
+    margin-top: auto !important;
+}
+
+.deleteExpBtn {
+    height: fit-content;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+/* ########################################### instructions  */
+
+.instruction-set {
+    list-style-type: decimal;
+}
+
+.instruction-col {
+    color: #fff;
+    background: #770F13;
+}
+
+.input-field {
+    border: 3px solid rgba(210, 211, 210, 0.726);
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    /* font-weight: 600; */
+    /* font-size: 1.1rem; */
+    color: #333;
+}
+
+.select-input-field {
+    line-height: 1;
+    /* font-weight: 600;
+    font-size: 1.1rem; */
+    color: #333;
+    max-width: 380px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    height: 55px;
+    /* border-radius: 55px; */
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+    border: none;
+}
+
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+}
+
+label {
+    margin-left: 1rem !important;
+    margin-bottom: 0rem !important;
+}
+
+/* upload file button custom style*/
+
+input[type=file]::-webkit-file-upload-button {
+    border: 2px solid #b8292f;
+    color: #fff;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #b8292f;
+    transition: 1s;
+}
+
+input[type=file]::file-selector-button {
+    border: 2px solid #b8292f;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #b8292f;
+    transition: 1s;
+}
+
+input[type=file]::-webkit-file-upload-button:hover {
+    background-color: #b8292f;
+    border: 2px solid #b8292f;
+}
+
+input[type=file]::file-selector-button:hover {
+    background-color: #b8292f;
+    border: 2px solid #b8292f;
+}
+
+/* style for preview modal to make it fullscreen*/
+
+.modal {
+    padding: 0 !important;
+}
+
+.modal .modal-dialog {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+}
+
+.modal .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+}
+
+.modal .modal-body {
+    overflow-y: auto;
+}
+
+#preview {
+    display: none;
+}

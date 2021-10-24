@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <!-- navbar start -->
+    <div class="container">
+        <div class="row py-3">
+            <div class="col-md-6">
+                <img src="./cuklogo.png" class="img-fluid" alt="cuk logo">
+                <h3>Ticket</h3>
+            </div>
+            <div class="col-md-6 my-auto">
+                <form class="form-inline my-2 my-lg-0 input-group ">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search by Ticket No."
+                        aria-label="Search" id="searchTicketNo">
+                    <button class="btn btn-success my-sm-0" type="submit"
+                        onclick="searchTicketNumber(); return false;">Search</button>
+                </form>
+                <div id="invalidDiv">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <div class="container">
+        <!-- form start -->
+        <form id="form" name="RegTicketForm" onsubmit="validateForm(); return false;">
+            <div class="form-row border p-4">
+                <div class="form-group col-md-6">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Full Name" id="fullName" name="Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" placeholder="Email" id="email" required name="Email">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="mobile">Mobile</label>
+                    <input type="tel" class="form-control" id="mobile" required name="Mobile">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="department">Department</label>
+                    <select id="department" class="form-control" required name="Department">
+                        <option disabled="disabled" selected>--Select--</option>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="queryType">Query Type</label>
+                    <select id="queryType" class="form-control" required name="QueryType">
+                        <option disabled="disabled" selected>--Select--</option>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="querySubject">Query</label>
+                    <input type="text" class="form-control" placeholder="Subject" id="querySubject" required
+                        name="Query">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="description">Description</label>
+                    <textarea required class="form-control" rows="5" placeholder="Description" id="description"
+                        name="Description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+        <!-- end form -->
+        <div id="details" class="border p-3" style="display:none;">
+            <div class="card">
+                <div style="background-color:rgb(235, 235, 243)" class="p-3 card-header">
+                    <p>Ticket Number <span style="color:rgb(6, 161, 6)"
+                            class="font-weight-bold">CUK-Ticket-5D3PRE3OTS</span></p>
+                </div>
+                <div class="row card-body ">
+                    <div class="col-md-6">
+                        <p><span class="font-weight-bold">Name</span> Ab. Rouf Wani</p>
+                        <p><span class="font-weight-bold">Email</span> Ab. Rouf Wani</p>
+                        <p><span class="font-weight-bold">Query Type</span> Ab. Rouf Wani</p>
+                        <p><span class="font-weight-bold">Subject</span> Ab. Rouf Wani</p>
+                        <p><span class="font-weight-bold">Description</span> Ab. Rouf Wani</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span class="font-weight-bold">Mobile No</span> Ab. Rouf Wani</p>
+                        <p><span class="font-weight-bold">Department</span> Ab. Rouf Wani</p>
+                        <p><span class="font-weight-bold">Raised On</span> Ab. Rouf Wani</p>
+                    </div>
+                    <div class="col-12 border-bottom">
+                        <p><span class="font-weight-bold">Remarks</span> </p>
+                    </div>
+                    <div class="col-md-12 border-top">
+                        <p><span class="font-weight-bold">Mar 19, 2021</span></p>
+                        <p><span class="font-weight-bold">Status</span> Account Created</p>
+                        <p><span class="font-weight-bold">Super Admin</p>
+                    </div>
+                    <div class="col"><button class="btn btn-danger">Reset</button></div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- for date manipulation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"
+        integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ=="
+        crossorigin="anonymous"></script>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        const departmentListApi = `http://103.48.51.235:8080/CukTicketAPI/ticket/departmentlist`;
+        const departmentListElement = document.getElementById("department");
+        const queryTypeListElement = document.getElementById("queryType");
+        const form = document.getElementById("form");
+        const details = document.getElementById("details");
+        const invalidElement = document.getElementById("invalidDiv");
+
+
+
+        fetch(departmentListApi)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                // show departments select options
+                for (let i = 0; i < data.departments.length; i++) {
+                    departmentListElement.innerHTML += `<option value="${data.departments[i].DepartmentId}">${data.departments[i].Hierarchy}</option>`;
+                }
+                // show query types select options
+                for (let i = 0; i < data.QueryTypes.length; i++) {
+                    queryTypeListElement.innerHTML += `<option value="${data.QueryTypes[i].QueryDescription}">${data.QueryTypes[i].QueryDescription}</option>`
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
+        function searchTicketNumber() {
+            const ticketNo = document.getElementById("searchTicketNo").value;
+            const params = {
+                ticketnumber: ticketNo
+            }
+            const JsonString = JSON.stringify(params);
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    let detailData = JSON.parse(xmlHttp.responseText);
+                    if (detailData.result.length) {
+                        document.getElementById("searchTicketNo").value = "";
+                        details.innerHTML = ` <div class="card">
+                <div style="background-color:rgb(235, 235, 243)" class="p-3 card-header">
+                    <p>Ticket Number <span style="color:rgb(6, 161, 6)" class="font-weight-bold">${detailData.result[0].TicketNumber}</span></p>
+                </div>
+                <div class="row card-body ">
+                    <div class="col-md-6">
+                        <p><span class="font-weight-bold">Name</span> ${detailData.result[0].Name}</p>
+                        <p><span class="font-weight-bold">Email</span> ${detailData.result[0].Email}</p>
+                        <p><span class="font-weight-bold">Query Type</span> ${detailData.result[0].QueryType}</p>
+                        <p><span class="font-weight-bold">Subject</span> ${detailData.result[0].Subject}</p>
+                        <p><span class="font-weight-bold">Description</span> ${detailData.result[0].Description}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><span class="font-weight-bold">Mobile No</span> ${detailData.result[0].Mobile}</p>
+                        <p><span class="font-weight-bold">Department</span> ${detailData.result[0].DepartmentName}</p>
+                        <p><span class="font-weight-bold">Raised On</span> ${moment(detailData.result[0].UploadDate).format('llll')}</p>
+                    </div>
+                    <div class="col-12 border-bottom">
+                        <p><span class="font-weight-bold">Remarks</span> </p>
+                    </div>
+                    <div class="col-md-12 border-top">
+                        <p><span class="font-weight-bold">${moment(detailData.result[0].UploadDate).format('llll')}</span></p>
+                        <p><span class="font-weight-bold">Status</span> ${detailData.result[0].TicketUpdate}</p>
+                        <p><span class="font-weight-bold">${detailData.result[0].UpdatedByEngineer}</p>
+                    </div>
+                    <div class="col"><button class="btn btn-danger" onclick="resetData(); return false;">Reset</button></div>
+
+                </div>
+            </div>`
+                        form.style.display = "none";
+                        details.style.display = "block";
+                    }
+                    else {
+                        invalidElement.innerHTML = `<div class="alert alert-danger alert-dismissible fade show m-1" role="alert">
+                        <strong>Invalid! </strong>Ticket No.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>`;
+
+                        // timeout function for alert div
+                        setTimeout(function () {
+                            // Closing the alert
+                            $('.alert').alert('close');
+                        }, 3000);
+                    }
+
+
+                }
+            }
+
+            xmlHttp.open("post", "http://103.48.51.235:8080/CukTicketAPI/ticket/getDetails");
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+            xmlHttp.send(JsonString);
+        }
+
+        // function to reset data
+        function resetData() {
+            document.getElementById("searchTicketNo").value = "";
+            form.style.display = "block";
+            details.style.display = "none";
+        }
+
+
+        // function to validate form data
+        function validateForm() {
+            let fullName = document.RegTicketForm.Name;
+            let email = document.RegTicketForm.Email;
+            let mobile = document.RegTicketForm.Mobile;
+            let query = document.RegTicketForm.Query;
+            let description = document.RegTicketForm.Description;
+            let queryType = document.RegTicketForm.QueryType;
+            let department = document.RegTicketForm.Department;
+            if (fullName.value == "" || fullName.value == null) {
+                window.alert("Please enter your name.");
+                fullName.focus();
+                return false;
+            }
+
+            if (email.value == "") {
+                window.alert("Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+            if (mobile.value == "" || isNaN(mobile.value) || mobile.value.length != 10) {
+                window.alert("Please enter your valid 10 digit mobile number.");
+                mobile.focus();
+                return false;
+            }
+            if (query.value == "") {
+                window.alert("Please enter query.");
+                query.focus();
+                return false;
+            }
+            if (queryType.value === "--Select--") {
+                window.alert("Please select query type.");
+                queryType.focus();
+                return false;
+            }
+            if (department.value === "--Select--") {
+                window.alert("Please select department.");
+                department.focus();
+                return false;
+            }
+            if (description.value == "") {
+                window.alert("Please enter query description");
+                description.focus();
+                return false;
+            }
+            saveData().catch(error => {
+                console.log('Request failed', error);
+            })
+
+        }
+
+
+        //function to save query data in databse
+        // data to be sent to the POST request
+
+        async function saveData() {
+            let fullName = document.RegTicketForm.Name;
+            let email = document.RegTicketForm.Email;
+            let mobile = document.RegTicketForm.Mobile;
+            let query = document.RegTicketForm.Query;
+            let description = document.RegTicketForm.Description;
+            let queryType = document.RegTicketForm.QueryType;
+            let department = document.RegTicketForm.Department;
+            let _data = {
+                DepartmentId: department.value,
+                Description: description.value,
+                Email: email.value,
+                FullName: fullName.value,
+                Mobile: mobile.value,
+                QueryType: queryType.value,
+                Subject: query.value
+
+            }
+            const response = await fetch('http://103.48.51.235:8080/CukTicketAPI/ticket/InsertTicket', {
+                method: "POST",
+                body: JSON.stringify(_data),
+                headers: { "Content-type": "application/json; charset=UTF-8" }
+            });
+            if (response.ok) {
+                console.log("successfull submitted data");
+                form.reset();
+                form.innerHTML = `<div class="alert alert-success alert-dismissible fade show m-1" role="alert">
+                        <strong>Successfully ! </strong>Submitted data.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>`;
+            }
+            else {
+                console.log("Request failed !");
+            }
+            const data = await response.json();
+            return data;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

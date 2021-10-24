@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onchange="validate(this);" data-width="1045" data-height="719" data-size="75" type="file"/>
+    <input onchange="validate(this);" data-width="1274" data-height="399" data-size="50" type="file" />
+
+    <script>
+        const IMAGE_TYPES = [
+                "image/jpeg",
+                "image/png",
+                "image/jpg"
+            ];
+        const loadImage = (file) => {
+            return new Promise(resolve=>{
+                const image = new Image();
+
+                image.addEventListener("load",()=>{
+                    resolve(image);
+                });
+                image.src = window.URL.createObjectURL(file);
+            })
+        }
+        async function getDimensions(file) {
+            let img = await loadImage(file);
+            return {"height":img.naturalHeight, "width":img.naturalWidth}
+        };
+        async function validate(elem) {
+            if(!elem.files) return;
+            let file = elem.files[0];
+            if(!IMAGE_TYPES.includes(file.type)){
+                elem.setCustomValidity("Invalid Type");
+                elem.reportValidity();
+                return;
+            }
+            let dimensions = await getDimensions(file);
+            if (dimensions.height !== parseInt(elem.dataset["height"]) || dimensions.width !== parseInt(elem.dataset["width"])){
+                elem.setCustomValidity("Dimensions not matching");
+                elem.reportValidity();
+            }
+            if(file.size > parseInt(elem.dataset["size"]) * 1024) 
+            {
+                elem.setCustomValidity("File size is too large");
+                elem.reportValidity();
+            }
+        }
+    </script>
+</body>
+</html>

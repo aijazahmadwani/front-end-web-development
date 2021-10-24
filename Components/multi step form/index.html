@@ -1,0 +1,764 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <title>Recruitment Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- moment.js for experience tab date calculation -->
+    <script src="./luxon.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container p-2 main-form">
+        <form id="recruitmentForm" name="mainForm" class="rounded p-4">
+            <h4 class="main-heading">Recruitment App</h4>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;margin-bottom:40px">
+                <span class="step">1</span>
+                <span class="step">2</span>
+                <span class="step">3</span>
+                <span class="step">4</span>
+                <span class="step">5</span>
+            </div>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <div class="row">
+
+                    <div class="col-md-3 instruction-col rounded">
+                        <h4 class="text-center p-2 m-0">Instructions </h4>
+                        <ul class="instruction-set">
+                            <li>Please enter the details carefully.</li>
+                            <li>Full name must include your first, middle and surname.</li>
+                            <li>Form once submitted, cannot be edited.</li>
+                            <li>Read all instructions carefully.</li>
+                            <li>Candidate can apply for only one post.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8  form-col rounded ml-md-1">
+                        <h3 class="text-center p-2 m-0 title">Personal Details</h3>
+                        <div class="form-row" id="personalDetails">
+                            <!-- first tab personal details-->
+                            <div class="form-group col-md-6">
+                                <label for="fullName">Full Name</label> <span class="" style="color:red"> * </span>
+                                <div class="input-field">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                    <input type="text" placeholder="Enter Full Name" id="fullName" name="name" required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="fathersName">Father's Name</label> <span class="" style="color:red"> *
+                                </span>
+                                <div class="input-field">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                    <input type="text" placeholder="Father's Name" id="fathersName" name="father_name"
+                                        required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="mothersName">Mother's Name</label> <span class="" style="color:red"> *
+                                </span>
+                                <div class="input-field">
+                                    <i class="fas fa-user" aria-hidden="true"></i>
+                                    <input type="text" placeholder="Mother's Name" id="mothersName" name="mother_name"
+                                        required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="gender">Gender</label> <span class="" style="color:red"> * </span>
+                                <select class="select-input-field" id="gender" required name="gender">
+                                    <option value="" disabled="disabled" selected>--Select--</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="dob">D.O.B</label> <span class="" style="color:red"> * </span>
+                                <div class="input-field">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <input class="" type="date" id="dob" name="dob" required>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="category">Category</label> <span class="" style="color:red"> * </span>
+                                <select class="select-input-field" id="category" required name="category">
+                                    <option value="" disabled="disabled" selected>--Select--</option>
+                                    <option value="om">OM</option>
+                                    <option value="sc">SC</option>
+                                    <option value="st">ST</option>
+                                    <option value="rba">RBA</option>
+                                    <option value="alc/ib">ALC/IB</option>
+                                    <option value="ews">EWS (Economically Weaker Section)</option>
+                                    <option value="psp">PSP (Pahari Speaking People)</option>
+                                    <option value="osc">Other Social Caste</option>
+                                    <option value="pcp">Physically Challenged Person</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="religion">Religion</label> <span class="" style="color:red"> * </span>
+                                <select class="select-input-field" id="religion" required name="religion">
+                                    <option value="" disabled="disabled" selected>--Select--</option>
+                                    <option value="islam">Islam</option>
+                                    <option value="hinduism">Hinduism</option>
+                                    <option value="christianity">Christianity</option>
+                                    <option value="buddhism">Buddhism</option>
+                                    <option value="judaism">Judaism</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="hiddenPhotoFile" value="" id="hiddenPhotoFile">
+                            <input type="hidden" name="hiddenSignatureFile" value="" id="hiddenSignatureFile">
+                            <!-- end first tab personal details-->
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="tab">
+                <div class="row">
+                    <div class="col-md-3 instruction-col rounded">
+                        <h4 class="text-center p-2 m-0">Instructions </h4>
+                        <ul class="instruction-set">
+                            <li>Please enter the details carefully.</li>
+                            <li>Full name must include your first, middle and surname.</li>
+                            <li>Form once submitted, cannot be edited.</li>
+                            <li>Read all instructions carefully.</li>
+                            <li>Candidate can apply for only one post.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8  form-col rounded ml-md-1">
+                        <h3 class="text-center  p-2 m-0 title">Address Details</h3>
+                        <div class="form-row" id="addressDetails">
+                            <!-- second tab communication details-->
+                            <div class="form-group col-md-6">
+                                <label for="email">Email</label><span class="" style="color:red"> * </span>
+                                <div class="input-field">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" placeholder="Email" id="email" required name="email" required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="permanentAddress">Permanent Address</label><span class="" style="color:red">
+                                    *
+                                </span>
+                                <div class="input-field">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <input type="text" placeholder="Permanent Address" id="permanentAddress"
+                                        name="permanent_address" required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="correspondingAddress">Corresponding Address</label><span class=""
+                                    style="color:red">
+                                    * </span>
+                                <div class="input-field">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <input type="text" placeholder="Corresponding Address" id="correspondingAddress"
+                                        name="corresponding_address" required>
+                                </div>
+
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="states">State</label><span class="" style="color:red"> * </span>
+                                <select class="select-input-field" id="states" required name="state">
+                                    <option value="" disabled="disabled" selected>--Select--</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="districts">District</label><span class="" style="color:red"> * </span>
+                                <select class="select-input-field" id="districts" required name="district">
+                                    <option value="" disabled="disabled" selected>--Select--</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="pin">Pin</label><span class="" style="color:red"> * </span>
+                                <div class="input-field">
+                                    <i class="fas fa-map-pin"></i>
+                                    <input type="text" id="pin" required name="pin" maxlength="6" minlength="6"
+                                        title="Enter 6 digit numeric pin" placeholder="e.g. 190001">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="mobile">Mobile</label><span class="" style="color:red"> * </span>
+                                <div class="input-field">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <input type="tel" id="mobile" required name="mobile" maxlength="10" minlength="10"
+                                        title="Enter 10 digit mobile number">
+                                </div>
+
+                            </div>
+                            <!-- end second tab communication details-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab">
+                <div class="row">
+                    <div class="col-md-3 instruction-col rounded">
+                        <h4 class="text-center p-2 m-0">Instructions </h4>
+                        <ul class="instruction-set">
+                            <li>Please enter the details carefully.</li>
+                            <li>Full name must include your first, middle and surname.</li>
+                            <li>Form once submitted, cannot be edited.</li>
+                            <li>Read all instructions carefully.</li>
+                            <li>Candidate can apply for only one post.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 form-col rounded ml-md-1">
+                        <h3 class="text-center  p-2 m-0 title">Qualification</h3>
+                        <div class="form-row" id="qualifications">
+                            <!-- third tab qualification details -->
+                            <div class="row border m-1 rounded">
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="examName">Degree/Exam</label><span class="" style="color:red"> *
+                                    </span>
+                                    <div class="input-field">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <input type="text" placeholder="MCA" id="examName" name="exam_name"
+                                            onchange="setQualName(getRowParent(this))" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="subjects">Subject(s)</label><span class="" style="color:red"> * </span>
+                                    <div class="input-field">
+                                        <i class="fas fa-newspaper"></i>
+                                        <input type="text" placeholder="Computer Science" id="subjects" name="subjects"
+                                            required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="yearOfPassing">Year of Passing</label><span class="" style="color:red">
+                                        *
+                                    </span>
+                                    <div class="input-field">
+                                        <i class="fas fa-clock"></i>
+                                        <input type="text" placeholder="Year of Passing" id="yearOfPassing"
+                                            name="year_of_passing" maxlength="4" minlength="4" pattern="[0-9]{4}"
+                                            title="Enter 4 digit year" placeholder="e.g. 2016" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="division">Division</label><span class="" style="color:red"> * </span>
+                                    <div class="input-field">
+                                        <i class="fas fa-award"></i>
+                                        <input type="text" placeholder="Division" id="division" name="division"
+                                            required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="cgpa">%age / CGPA</label><span class="" style="color:red"> * </span>
+                                    <div class="input-field">
+                                        <i class="fas fa-percentage"></i>
+                                        <input type="text" placeholder="e.g. 88.6" id="cgpa" name="percentage" required>
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="university">Board/University</label><span class="" style="color:red">
+                                        *
+                                    </span>
+                                    <div class="input-field">
+                                        <i class="fas fa-university"></i>
+                                        <input type="text" placeholder="Board / University" id="university"
+                                            name="university" required>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="hidden_exam_name" value="" id="hiddenQualName">
+                                <input type="hidden" name="hidden_file_name" value="" id="hidden_file_name">
+                            </div>
+
+                        </div>
+                        <button type="button" id="addQual" class="btn m-1">Add another
+                            Qualification</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="tab">
+                <div class="row">
+                    <div class="col-md-3 instruction-col rounded">
+                        <h4 class="text-center p-2 m-0">Instructions </h4>
+                        <ul class="instruction-set">
+                            <li>Please enter the details carefully.</li>
+                            <li>Full name must include your first, middle and surname.</li>
+                            <li>Form once submitted, cannot be edited.</li>
+                            <li>Read all instructions carefully.</li>
+                            <li>Candidate can apply for only one post.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 form-col rounded ml-md-1">
+                        <h3 class="text-center  p-2 m-0 title">Experience(s)</h3>
+                        <div class="form-row" id="experiences">
+                            <!-- fourth tab experience details  -->
+                            <div class="row border m-1 rounded" style="width:100%">
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="designation">Designation</label>
+                                    <div class="input-field">
+                                        <i class="fas fa-briefcase"></i>
+                                        <input type="text" placeholder="Designation" id="designation" name="designation"
+                                            onchange="setDesignationName(getRowParent(this))">
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="employer">Employer</label>
+                                    <div class="input-field">
+                                        <i class="fas fa-warehouse"></i>
+                                        <input type="text" placeholder="Employer" id="employer" name="employer"
+                                            onchange="setEmployerName(getRowParent(this))">
+                                    </div>
+
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="payScale">Pay Scale</label>
+                                    <div class="input-field">
+                                        <i class="fas fa-rupee-sign"></i>
+                                        <input type="text" placeholder="e.g. 15000" id="payScale" name="pay_scale">
+                                    </div>
+
+                                </div>
+                                <!-- <div class="form-group col-md-6 col-lg-4">
+                                    <label for="noOfYearsExp">Experience (years)</label>
+                                    <div class="input-field">
+                                        <i class="fas fa-briefcase"></i>
+                                        <input type="number" placeholder="eg 4 for 4 Years" id="noOfYearsExp"
+                                            name="years_of_experience">
+                                    </div>
+                                </div> -->
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="dob">Start Date</label>
+                                    <div class="input-field">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <input class="" type="date" id="experience_start_date"
+                                            name="experience_start_date" required
+                                            onchange="calculateDate(getRowParent(this))">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <label for="dob">End Date</label>
+                                    <div class="input-field">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <input class="" type="date" id="experience_end_date" name="experience_end_date"
+                                            required onchange="calculateDate(getRowParent(this))">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6 col-lg-4">
+                                    <br>
+                                    <br>
+                                    <span id="experience_diff"></span>
+                                </div>
+                                <input type="hidden" name="hidden_designation" value="" id="hidden_designation">
+                                <input type="hidden" name="hidden_employer" value="" id="hidden_employer">
+                                <input type="hidden" name="hidden_file_name" value="" id="hidden_file_name">
+                            </div>
+
+                            <!-- end fourth tab experience details  -->
+                        </div>
+                        <button type="button" id="addExp" class="btn m-1">Add another Experience</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="tab">
+                <div class="row">
+                    <div class="col-md-3 instruction-col rounded">
+                        <h4 class="text-center p-2 m-0">Instructions </h4>
+                        <ul class="instruction-set">
+                            <li>Please enter the details carefully.</li>
+                            <li>Full name must include your first, middle and surname.</li>
+                            <li>Form once submitted, cannot be edited.</li>
+                            <li>Read all instructions carefully.</li>
+                            <li>Candidate can apply for only one post.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 form-col rounded ml-md-1">
+                        <h3 class="text-center  p-2 m-0 title">Photo & Certificates</h3>
+                        <div class="form-row" id="photo_and_certificates">
+                            <!-- photo and certificates tab -->
+                            <div class="row border rounded p-1 m-1" style="width: 100%;">
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlFile1">1. Upload your photo (Please ensure that the
+                                        dimension
+                                        are
+                                        160 x
+                                        140)</label>
+                                    <input type="file" class="form-control-file m-2" id="photo"
+                                        accept=".jpg, .png, .jpeg" onchange="validate(this);" data-width="160"
+                                        data-height="140" data-size="75" data-preview="imagePreview" name="photo"
+                                        required id="photo">
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <div id="imagePreview">
+                                        <p>No files currently selected for upload</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border rounded  p-1 m-1" style="width: 100%;">
+                                <div class="form-group col-md-6">
+                                    <label for="exampleFormControlFile1">2. Upload your Signature (Please ensure that
+                                        the
+                                        dimension
+                                        are 180
+                                        x 60)</label>
+                                    <input type="file" class="form-control-file m-2" id="signature"
+                                        accept=".jpg, .png, .jpeg" onchange="validate(this);" data-width="180"
+                                        data-height="60" data-size="50" data-preview="signaturePreview" name="signature"
+                                        required id="signature">
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <div id="signaturePreview">
+                                        <p>No files currently selected for upload</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row border rounded  p-1 m-1" style="width: 100%;">
+                                <div class="form-group col-md-12">
+                                    <label for="exampleFormControlFile1">3. Upload Marks Certificates (scan your all
+                                        relevant
+                                        Marks
+                                        Certificate in one Pdf file before upload)</label>
+                                    <div class="form-group col-md-12" id="marks_certificates">
+
+                                    </div>
+                                    <!-- <button type="button" id="addCertificate" class="btn m-1">Add
+                                    Certificate</button> -->
+                                </div>
+                            </div>
+                            <div class="row border rounded  p-1 m-1" style="width: 100%;">
+                                <div class="form-group col-md-12">
+                                    <label for="exampleFormControlFile1">4. Upload Experience Certificates (scan your
+                                        all
+                                        experience
+                                        certificates in one Pdf file before upload)</label>
+                                    <div class="form-group col-md-12" id="experiences_certificates">
+
+                                    </div>
+                                    <!-- <input type="file" class="form-control-file pdf-file m-2"
+                                        id="experience_certificate" accept=".pdf" name="experience_certificate"
+                                        required> -->
+                                </div>
+                            </div>
+                            <div class="row border rounded  p-1 m-1" style="width: 100%;">
+                                <div class="form-group col-md-12">
+                                    <label for="exampleFormControlFile1">5. Upload Category Certificates -if applicable
+                                        (scan
+                                        your
+                                        category
+                                        certificates as Pdf file before upload)</label>
+                                    <input type="file" class="form-control-file pdf-file m-2" id="category_certificate"
+                                        accept=".pdf" onchange="validatePDF(this);" name="category_certificate"
+                                        required>
+                                </div>
+                            </div>
+                            <!-- end of tab photo and certificates -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="overflow:auto;">
+                <div style="float:right;">
+                    <button type="button" id="prevBtn" class="btn m-2 btn-outline-primary btn-lg">Previous</button>
+                    <button type="button" id="nextBtn" class="btn m-2 btn-lg">Next</button>
+
+                    <!-- <button type="button" id="preview" class="btn m-1">Preview</button> -->
+                </div>
+            </div>
+            <!-- preview form -->
+            <button type="button" id="preview" class="btn" data-toggle="modal" data-target="#exampleModal">
+                Preview
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Recruitment Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="./logo.svg" alt="" class="img-fluid logo">
+                                    </div>
+                                    <div class="col-md-6 text-center pt-3">
+                                        <h5>Green Campus, Duderhama, Ganderbal-191201</h5>
+                                        <p class="m-0">Jammu & Kashmir | Ph.No: 0194-2416030, 0194-2416077</p>
+                                        <h5>Recruitment Application Form</h5>
+                                        <p class="float-right m-0"><strong>Form No: 21802</strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" class="personalDetails">
+                                    <div class="col-md-12 text-right">
+                                        Post Applied For: <strong>Assistant Professor</strong>
+                                        <hr>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4>Personal Details</h4>
+                                        <ul>
+                                            <li><strong>Name:</strong><span class="preview_static"
+                                                    data-key="name"></span></li>
+                                            <li><strong>Father:</strong><span class="preview_static"
+                                                    data-key="father_name"></span></li>
+                                            <li><strong>Mother:</strong><span class="preview_static"
+                                                    data-key="mother_name"></span></li>
+                                            <li><strong>Gender:</strong><span class="preview_static"
+                                                    data-key="gender"></span>
+                                            </li>
+                                            <li><strong>DOB:</strong><span class="preview_static" data-key="dob"></span>
+                                            </li>
+                                            <li><strong>Cateogry:</strong><span class="preview_static"
+                                                    data-key="category">
+                                                </span></li>
+                                            <li><strong>Religon:</strong><span class="preview_static"
+                                                    data-key="religion">
+                                                </span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4>Communication Details</h4>
+                                        <ul>
+                                            <li><strong>Email:</strong><span class="preview_static" data-key="email">
+                                                </span></li>
+                                            <li><strong>P. Address:</strong><span class="preview_static"
+                                                    data-key="permanent_address">
+                                                </span></li>
+                                            <li><strong>Corr. Address:</strong><span class="preview_static"
+                                                    data-key="corresponding_address">
+                                                </span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h4>Communication Details</h4>
+                                        <ul>
+                                            <li><strong>State:</strong><span class="preview_static" data-key="state">
+                                                </span>
+                                            </li>
+                                            <li><strong>District:</strong><span class="preview_static"
+                                                    data-key="district">
+                                                </span></li>
+                                            <li><strong>Pin:</strong><span class="preview_static" data-key="pin">
+                                                </span></li>
+                                            <li><strong>Mobile:</strong><span class="preview_static" data-key="mobile">
+                                                </span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+
+                                        <img src="" alt="" width="160" height="140" name="photo" id="preview_photo">
+                                    </div>
+                                </div>
+
+                                <!-- qualification details -->
+                                <h4>Qualification Details</h4>
+                                <div class="table-responsive">
+                                    <table class="table border">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">S.No.</th>
+                                                <th scope="col">Exam Name</th>
+                                                <th scope="col">Subject(s)</th>
+                                                <th scope="col">Year of Passing</th>
+                                                <th scope="col">Division</th>
+                                                <th scope="col">%age/CGPA</th>
+                                                <th scope="col">Board/University</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="qualificationsbody">
+                                            <!-- <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>Mark</td>
+                                                                                    <td>Otto</td>
+                                                                                    <td>@mdo</td>
+                                                                                    <td>Mark</td>
+                                                                                    <td>Otto</td>
+                                                                                    <td>@mdo</td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th scope="row">2</th>
+                                                                                    <td>Jacob</td>
+                                                                                    <td>Thornton</td>
+                                                                                    <td>@fat</td>
+                                                                                    <td>Mark</td>
+                                                                                    <td>Otto</td>
+                                                                                    <td>@mdo</td>
+                                                                                </tr> -->
+
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- experience details -->
+                                <h4>Experience Details</h4>
+                                <div class="table-responsive">
+                                    <table class="table border">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">S.No.</th>
+                                                <th scope="col">Designation</th>
+                                                <th scope="col">Employer</th>
+                                                <th scope="col">Pay Scale</th>
+                                                <th scope="col">Start Date</th>
+                                                <th scope="col">End Date</th>
+                                                <th scope="col">Duration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="experiencesbody">
+                                            <!-- <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>Mark</td>
+                                                                                    <td>Otto</td>
+                                                                                    <td>@mdo</td>
+                                                                                    <td>@mdo</td>
+                                                                                </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                <!-- payment and documents -->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4>Certificates Uploaded</h4>
+                                        <ul class="certificates-ul p-2 ml-3">
+                                            <li>Scanned copy of Mark Sheet(s) : <strong>Yes Uploaded</strong>
+                                                <ul id="preview_marks_certificates"
+                                                    style="list-style-type: upper-roman;">
+                                                </ul>
+
+
+                                            </li>
+                                            <li>Scanned Copy of Experience
+                                                Certificate :
+                                                <strong>Yes
+                                                    Uploaded</strong>
+                                                <ul id="preview_experience_certificates"
+                                                    style="list-style-type: upper-roman;">
+                                                </ul>
+                                            </li>
+                                            <li>Scanned Copy of Category
+                                                Certificate : <strong>Yes
+                                                    Uploaded</strong>
+                                                <span id="preview_category_certificate"></span>
+                                            </li>
+
+                                            <li>Payment Reciept: <strong>Not Uploaded</strong>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h4>Payment Details</h4>
+                                        <table class="table  border">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Total Amount Paid:</th>
+                                                    <td>Rs. 300.0000</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Transaction ID</th>
+                                                    <td>GH-7456746</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Mobile Number:</th>
+                                                    <td>8825069299</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Deposit Date:</th>
+                                                    <td>05/03/2021</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p>
+                                            <strong>Declaration:</strong> I declare that the foregoing information
+                                            is correct and
+                                            complete to
+                                            the
+                                            best of my knowledge and belief and
+                                            nothing has been concealed/ distorted. If I am found to have
+                                            concealed/distorted any
+                                            material
+                                            information, my
+                                            application shall be liable to summarily rejected without any notice. If
+                                            offered
+                                            appointment, I will
+                                            join on specified
+                                            date and subsequently take up CU Kashmir's assignment anywhere as and
+                                            when required.
+                                        </p>
+                                    </div>
+
+                                </div>
+                                <div class="float-right">
+                                    <img src="" alt="" width="180" height="60" name="signature" id="preview_signature">
+                                    <p class="m-1"><strong>Applicant Signature</strong></p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn " data-dismiss="modal">Close</button>
+                            <button type="button" class="btn" onclick="printForm();">Print Form</button>
+                            <button type="button" class="btn ">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end preview form -->
+
+
+        </form>
+    </div>
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

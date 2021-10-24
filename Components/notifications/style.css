@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(238, 234, 234, 0.781);
+}
+
+a {
+    color: #652b7c;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #a612e6;
+}
+
+.switch-buttons .btn-primary.light-grey.active {
+    width: auto;
+    padding: 10px 16px;
+    font-weight: 500;
+    height: auto;
+    border: solid 1px rgb(209, 94, 255, 0);
+    color: #d15eff;
+    background-color: rgb(209, 94, 255, 0.16);
+    border-radius: 20px;
+}
+
+.switch-buttons .btn-primary.light-grey.active:hover {
+    background-color: rgb(209, 94, 255, 0.8);
+    color: #fff;
+}
+
+.switch-buttons .btn-primary.light-grey {
+    width: auto;
+    padding: 10px 16px;
+    font-weight: 500;
+    height: auto;
+    border: none;
+    color: #454e81;
+    border: solid 1px rgb(69, 78, 129, 0.1);
+    background-color: transparent;
+    border-radius: 22px;
+}
+
+.switch-buttons .btn-primary.light-grey:hover {
+    color: #454e81;
+    background-color: rgb(69, 78, 129, 0.1);
+}
+
+.card.card-depart {
+    transition: ease-in 0.2s;
+    /* background-color: #ffffff !important; */
+    background-color: rgba(238, 234, 234, 0.781);
+    border: 2px solid #ffffff;
+}
+
+.min-height {
+    min-height: 425px;
+}
+
+.card {
+    border-radius: 16px;
+}
+
+.spotlight .scrollable-list {
+    max-height: 396px;
+    overflow-y: scroll;
+    min-height: 360px;
+    max-height: 360px;
+    margin-left: -13px;
+    margin-right: -13px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.ma_news {
+    width: 100%;
+}
+
+.latest-du li {
+    background-color: rgba(50, 34, 56, 0) !important;
+    border-bottom: solid 1px rgb(101, 43, 124, 0.05);
+    padding-bottom: 14px !important;
+    padding-top: 12px !important;
+}
+
+.latest-du.switch-buttons .btn-primary.light-grey {
+    font-size: 12px !important;
+    padding: 6px;
+}
+
+.media {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.media:hover {
+    background-color: rgb(209, 94, 255, 0.05);
+    border-bottom: solid 3px rgb(209, 94, 255, 0.16);
+    border-radius: 16px;
+    color: #a612e6;
+}
+
+.media:hover a, .media:hover .btn-primary.light-grey {
+    color: #a612e6;
+}
+
+/* custom scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(195, 96, 235, 0.815);
+    ;
+}
+
+/* end of custom scrollbar */
+
+/* view all button */
+
+.btn-primary {
+    /* width: 200px;
+    height: 55px; */
+    border-radius: 30px;
+    background-color: #652b7c;
+    opacity: .95;
+    border: none;
+    transition: ease-in 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #d15eff;
+    opacity: .95;
+}

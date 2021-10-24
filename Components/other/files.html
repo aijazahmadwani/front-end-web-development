@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello, world!</h1>
+        <form action="">
+            <div class="tab">
+                <div class="text-center pt-2">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa fa-circle fa-stack-2x icon-background" style="color:rgb(161, 196, 216)"></i>
+                        <i class="fas fa-file-invoice fa-stack-1x" style="color:rgb(5, 27, 41);"></i>
+                    </span>
+                </div>
+                <h3 class="text-center  p-2 m-0">Photo & Certificates</h3>
+                <div class="form-row">
+                    <!-- photo and certificates tab -->
+                    <div class="row border p-1 my-1" style="width: 100%;">
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlFile1">1. Upload your photo (Please ensure that the dimension
+                                are
+                                160 x
+                                140)</label>
+                            <input type="file" class="form-control-file" id="photo" accept=".jpg, .png, .jpeg"
+                                onchange="validate(this);" data-width="1045" data-height="719" data-size="75"
+                                data-preview="imagePreview" required>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div id="imagePreview">
+                                <p>No files currently selected for upload</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row border p-1 my-1" style="width: 100%;">
+                        <div class="form-group col-md-6">
+                            <label for="exampleFormControlFile1">2. Upload your Signature (Please ensure that the
+                                dimension
+                                are 180
+                                x 60)</label>
+                            <input type="file" class="form-control-file" id="signature" accept=".jpg, .png, .jpeg"
+                                onchange="validate(this);" data-width="1274" data-height="399" data-size="50"
+                                data-preview="signaturePreview" required>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <div id="signaturePreview">
+                                <p>No files currently selected for upload</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row border p-1 my-1" style="width: 100%;">
+                        <div class="form-group col-md-12">
+                            <label for="exampleFormControlFile1">3. Upload Marks Certificates (scan your all relevant
+                                Marks
+                                Certificate in one Pdf file before upload)</label>
+                            <input type="file" class="form-control-file pdf-file" id="marks" accept=".pdf" required>
+                        </div>
+                    </div>
+                    <div class="row border p-1 my-1" style="width: 100%;">
+                        <div class="form-group col-md-12">
+                            <label for="exampleFormControlFile1">4. Upload Experience Certificates (scan your all
+                                experience
+                                certificates in one Pdf file before upload)</label>
+                            <input type="file" class="form-control-file pdf-file" id="experience" accept=".pdf"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row border p-1 my-1" style="width: 100%;">
+                        <div class="form-group col-md-12">
+                            <label for="exampleFormControlFile1">5. Upload Category Certificates -if applicable (scan
+                                your
+                                category
+                                certificates as Pdf file before upload)</label>
+                            <input type="file" class="form-control-file pdf-file" id="#" accept=".pdf" required>
+                        </div>
+                    </div>
+                    <!-- end of tab photo and certificates -->
+                </div>
+
+            </div>
+            <button type="submit" class="btn" id="nextBtn">
+                Submit
+            </button>
+        </form>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        //  let input = document.getElementById("photo");
+        // let signature = document.getElementById("signature");
+
+        //   input.addEventListener('change', updateImageDisplay);
+        //   signature.addEventListener('change', updateSignatureDisplay);
+        function updateSignatureDisplay() {
+            while (signaturePreview.firstChild) {
+                signaturePreview.removeChild(signaturePreview.firstChild);
+            }
+
+            const curFiles = signature.files;
+            if (curFiles.length === 0) {
+                const para = document.createElement('p');
+                para.textContent = 'No files currently selected for upload';
+                signaturePreview.appendChild(para);
+            } else {
+                const list = document.createElement('ol');
+                list.style.listStyle = "none";
+                signaturePreview.appendChild(list);
+
+                for (const file of curFiles) {
+                    const listItem = document.createElement('li');
+                    const para = document.createElement('p');
+                    let p = 'signature'
+                    if (validFileType(file) && checkFileSize(p)) {
+                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+                        const image = document.createElement('img');
+                        image.style.width = "80px";
+                        image.src = URL.createObjectURL(file);
+                        console.log(image.src);
+
+                        listItem.appendChild(image);
+                        listItem.appendChild(para);
+                    } else {
+                        para.innerHTML = `<div class="alert alert-danger" role="alert">
+                            File name ${file.name}: Not a valid file type / size. Update your selection.</div>`;
+                        listItem.appendChild(para);
+                    }
+                    list.appendChild(listItem);
+                }
+            }
+        }
+        function updateImageDisplay() {
+            while (preview.firstChild) {
+                preview.removeChild(preview.firstChild);
+            }
+
+            const curFiles = input.files;
+            if (curFiles.length === 0) {
+                const para = document.createElement('p');
+                para.textContent = 'No files currently selected for upload';
+                preview.appendChild(para);
+            } else {
+                const list = document.createElement('ol');
+                list.style.listStyle = "none";
+                preview.appendChild(list);
+
+                for (const file of curFiles) {
+                    const listItem = document.createElement('li');
+                    const para = document.createElement('p');
+                    let p = 'image';
+                    console.log(file)
+                    if (validFileType(file) && checkFileSize(p) && checkDimensions()) {
+                        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+                        const image = document.createElement('img');
+                        image.style.width = "100px";
+                        image.src = URL.createObjectURL(file);
+
+                        listItem.appendChild(image);
+                        listItem.appendChild(para);
+                    } else {
+                        para.innerHTML = `<div class="alert alert-danger" role="alert">
+                            File name ${file.name}: Not a valid file type / size. Update your selection.</div>`;
+                        listItem.appendChild(para);
+                    }
+
+
+                    list.appendChild(listItem);
+                }
+            }
+        }
+        function returnFileSize(number) {
+            if (number < 1024) {
+                return number + 'bytes';
+            } else if (number >= 1024 && number < 1048576) {
+                return (number / 1024).toFixed(1) + 'KB';
+            } else if (number >= 1048576) {
+                return (number / 1048576).toFixed(1) + 'MB';
+            }
+        }
+        //############################################################################
+        //image validation
+        const IMAGE_TYPES = [
+            "image/jpeg",
+            "image/png",
+            "image/jpg"
+        ];
+        const loadImage = (file) => {
+            return new Promise(resolve => {
+                const image = new Image();
+
+                image.addEventListener("load", () => {
+                    resolve(image);
+                });
+                image.src = window.URL.createObjectURL(file);
+            })
+        }
+        async function getDimensions(file) {
+            let img = await loadImage(file);
+            return { "height": img.naturalHeight, "width": img.naturalWidth }
+        };
+        async function validate(elem) {
+            let imagePreview = document.getElementById(elem.dataset["preview"]);
+            imagePreview.innerHTML = "";
+            if (!elem.files) return false;
+            let file = elem.files[0];
+            if (!IMAGE_TYPES.includes(file.type)) {
+                elem.setCustomValidity("Invalid Type");
+                elem.reportValidity();
+                return false;
+            }
+            let dimensions = await getDimensions(file);
+            if (dimensions.height !== parseInt(elem.dataset["height"]) || dimensions.width !== parseInt(elem.dataset["width"])) {
+                elem.setCustomValidity("Dimensions not matching");
+                elem.reportValidity();
+                return false;
+            }
+            if (file.size > parseInt(elem.dataset["size"]) * 1024) {
+                elem.setCustomValidity("File size is too large");
+                elem.reportValidity();
+                return false;
+            }
+            //image preview
+
+            const image = document.createElement('img');
+            image.style.width = "100px";
+            image.src = URL.createObjectURL(file);
+            imagePreview.appendChild(image);
+
+        }
+
+
+        // pdf validation
+        const PDF_TYPES = [
+            "application/pdf"
+        ];
+        let pdfs = document.getElementsByClassName("pdf-file");
+        for (let item of pdfs) {
+            item.addEventListener('change', e => {
+                let file = item.files[0];
+                if (!PDF_TYPES.includes(file.type)) {
+                    item.setCustomValidity("Invalid Type");
+                    item.reportValidity();
+                    return false;
+                }
+                if (file.size > 1024 * 1024) {
+                    item.setCustomValidity("File size is too large");
+                    item.reportValidity();
+                    return false;
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

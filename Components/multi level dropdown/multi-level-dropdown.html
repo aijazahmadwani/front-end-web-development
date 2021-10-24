@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- font awesome icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+  <title>Hello, world!</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar  navbar-expand-md navbar-dark py-3 shadow-sm ">
+    <div class="container">
+      <a href="#" class="navbar-brand font-weight-bold">Multilevel Dropdown</a>
+      <button type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbars"
+        aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div id="navbarContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <!-- Level one dropdown -->
+          <li class="nav-item dropdown l1">
+            <a id="dropdownMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+              class="nav-link dropdown-toggle" data-toggle="collapse" data-target=".navbar-collapse.show">Explore</a>
+            <ul aria-labelledby="dropdownMenu1" class="dropdown-menu border-0 shadow l1-ul">
+              <li><a href="#" class="dropdown-item">Mountains</a></li>
+              <li><a href="#" class="dropdown-item">Monuments</a></li>
+              <li><a href="#" class="dropdown-item">Lakes</a></li>
+              <li><a href="#" class="dropdown-item">Wildlife</a></li>
+              <!-- Level two dropdown-->
+              <li class="dropdown-submenu l2">
+                <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" class="dropdown-item dropdown-toggle">Districts</a>
+                <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow l2-ul" style="width:30rem">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <p class=" ul-heading m-0">Kashmir</p>
+                      <ul style="list-style-type: none;" class="p-0 ">
+                        <li><a href="#" class="dropdown-item">Srinagar</a></li>
+                        <li><a href="#" class="dropdown-item">Ganderbal</a></li>
+                        <li><a href="#" class="dropdown-item">Shopian</a></li>
+                        <li><a href="#" class="dropdown-item">Pulwama</a></li>
+                        <li><a href="#" class="dropdown-item">Bandipora</a></li>
+                        <li><a href="#" class="dropdown-item">Budgam</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <p class=" ul-heading m-0">Jammu</p>
+                      <ul style="list-style-type: none;" class="p-0">
+                        <li><a href="#" class="dropdown-item">Udampur</a></li>
+                        <li><a href="#" class="dropdown-item">Reasi</a></li>
+                        <li><a href="#" class="dropdown-item">Doda</a></li>
+                        <li><a href="#" class="dropdown-item">Jammu</a></li>
+                        <li><a href="#" class="dropdown-item">Doda</a></li>
+                        <li><a href="#" class="dropdown-item">Jammu</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Level three dropdown-->
+                  <!-- <li class="dropdown-submenu">
+                    <a id="dropdownMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" class="dropdown-item dropdown-toggle ">Kashmir</a>
+                    <ul aria-labelledby="dropdownMenu3" class="dropdown-menu border-0 shadow">
+                      <li><a href="#" class="dropdown-item">Srinagar</a></li>
+                      <li><a href="#" class="dropdown-item">Ganderbal</a></li>
+                      <li><a href="#" class="dropdown-item">Shopian</a></li>
+                      <li><a href="#" class="dropdown-item">Pulwama</a></li>
+                      <li><a href="#" class="dropdown-item">Bandipora</a></li>
+                      <li><a href="#" class="dropdown-item">Budgam</a></li>
+                    </ul>
+                  </li> -->
+                  <!-- End Level three -->
+                  <!-- Level three dropdown-->
+                  <!-- <li class="dropdown-submenu">
+                    <a id="dropdownMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" class="dropdown-item dropdown-toggle">Jammu</a>
+                    <ul aria-labelledby="dropdownMenu3" class="dropdown-menu border-0 shadow">
+                      <li><a href="#" class="dropdown-item">Ramban</a></li>
+                      <li><a href="#" class="dropdown-item">Doda</a></li>
+                      <li><a href="#" class="dropdown-item">Jammu</a></li>
+                      <li><a href="#" class="dropdown-item">Reasi</a></li>
+                    </ul>
+                  </li> -->
+                  <!-- End Level three -->
+                </ul>
+              </li>
+              <!-- End Level two -->
+              <!-- Level two dropdown-->
+              <li class="dropdown-submenu l2">
+                <a id="dropdownMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false" class="dropdown-item dropdown-toggle">Gardens</a>
+                <ul aria-labelledby="dropdownMenu2" class="dropdown-menu border-0 shadow l2-ul">
+                  <li>
+                    <a href="#" class="dropdown-item">Nishat</a>
+                  </li>
+
+                  <li><a href="#" class="dropdown-item">Shalimar</a></li>
+                  <li><a href="#" class="dropdown-item">Harwan</a></li>
+                  <li><a href="#" class="dropdown-item">Gulamrg</a></li>
+                  <li><a href="#" class="dropdown-item">Somamarg</a></li>
+                  <li><a href="#" class="dropdown-item">Harwan</a></li>
+                  <!-- Level three dropdown-->
+                  <li class="dropdown-submenu l3">
+                    <a id="dropdownMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false" class="dropdown-item dropdown-toggle">Srinagar</a>
+                    <ul aria-labelledby="dropdownMenu3" class="dropdown-menu border-0 shadow l3-ul">
+                      <li><a href="#" class="dropdown-item">Lalchowk</a></li>
+                      <li><a href="#" class="dropdown-item">Rainawari</a></li>
+                    </ul>
+                  </li>
+                  <!-- End Level three -->
+                </ul>
+              </li>
+              <!-- End Level two -->
+            </ul>
+          </li>
+          <!-- End Level one -->
+
+          <li class="nav-item"><a href="#" class="nav-link" data-toggle="collapse"
+              data-target=".navbar-collapse.show">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-toggle="collapse"
+              data-target=".navbar-collapse.show">Services</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-toggle="collapse"
+              data-target=".navbar-collapse.show">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- End -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      // ------------------------------------------------------- //
+      // Multi Level dropdowns
+      // ------------------------------------------------------ //
+      $("ul.dropdown-menu [data-toggle='dropdown']").on("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        $(this).siblings().toggleClass("show");
+
+
+        if (!$(this).next().hasClass('show')) {
+          $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+          $('.dropdown-submenu .show').removeClass("show");
+        });
+
+      });
+    });
+
+  </script>
+</body>
+
+</html>
