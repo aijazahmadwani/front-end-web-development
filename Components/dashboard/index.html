@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -27,26 +27,17 @@
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
-                    <a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo"
+                    <a hef="home.html"><img src="https://www.bqe.com/bqe-assets/images/logos/logo-core-wht.svg" alt="merkery_logo"
                             class="hidden-xs hidden-sm">
-                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo"
-                            class="visible-xs visible-sm circle-logo">
                     </a>
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i><span
-                                    class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li class="active"><a href="#"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><span
+                                    class="hidden-xs hidden-sm">Events</span></a></li>
                         <li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span
                                     class="hidden-xs hidden-sm">Workflow</span></a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span
-                                    class="hidden-xs hidden-sm">Statistics</span></a></li>
-                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span
-                                    class="hidden-xs hidden-sm">Calender</span></a></li>
-                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span
-                                    class="hidden-xs hidden-sm">Users</span></a></li>
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span
-                                    class="hidden-xs hidden-sm">Setting</span></a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -58,16 +49,16 @@
                     <div class="col-md-4">
 
                         <div class="" style="display: flex ; justify-content: end;">
-                            <ul class="">
+                            <ul class="rightside-dropdown">
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aijaz Wani
                                         <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="navbar-content">
-                                                <span>JS Krishna</span>
+                                                <span>Aijaz Wani</span>
                                                 <p class="text-muted small">
-                                                    me@jskrishna.com
+                                                    aijaz.wani@bqe.com
                                                 </p>
                                                 <div class="divider">
                                                 </div>
@@ -80,31 +71,31 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row d-flex">
                     <div class="col-md-6">
                         <h1>Events</h1>
                     </div>
                     <div class="col-md-6">
-                       <h3> Add Event</h3>
+                       <button class="add-event pull-right"> ADD EVENT</button>
                     </div>
                 </div>
 
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
-                <div class="row">
-                    <header>
-                        <div class="col-md-7">
-                            <nav class="navbar-default pull-left">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas"
-                                        data-target="#side-menu" aria-expanded="false">
-                                        <span class="sr-only">Toggle navigation</span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                </div>
-                            </nav>
-                            <div class="search hidden-xs hidden-sm">
+                <div class="row filter-row">
+                    <nav class="navbar-default pull-left">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas"
+                                data-target="#side-menu" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                    </nav>
+                        <div class="col-md-4">
+                            <p>Search by event title</p>                    
+                            <div class="search ">
                                 <div class=" form-group search-container">
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
                                     <input type="text" placeholder="Search" id="search" class="form-control">
@@ -112,12 +103,30 @@
 
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-3">
+                           <p>Category</p>
+                           <select name="evCategoryId" id="category" class="form-control" formControlName="evCategoryId">
+                            <option value="00000000-0000-0000-0000-000000000001">Webinar</option>
+                            <option value="00000000-0000-0000-0000-000000000002">Industry Event</option>
+                            <option value="00000000-0000-0000-0000-000000000003">Hangout</option>
+                            <option value="00000000-0000-0000-0000-000000000004">Live Event</option>
+                        </select>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Status</p>
+                            <select name="evCategoryId" id="category" class="form-control" formControlName="evCategoryId">
+                                <option value="1">Active</option>
+                                <option value="NULL">Disabled</option>
+                            </select>
                            
                         </div>
-                    </header>
+                        <div class="col-md-2">
+                            <p></p>
+                            <br>
+                           <button class="btn btn-primary">Search</button>
+                        </div>
                 </div>
-                <div class="">
+                <div class="" style="margin-top: 10px;">
                     <div class="table-responsive">
                         <table class="table table-hover">
                             <thead>
@@ -142,7 +151,7 @@
                                     <td>Bass</td>
                                     <td>BQE</td>
                                     <td> <span class="status disabled">Disabled</span> </td>
-                                    <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span>Edit</td>
+                                    <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <td>George Harrison</td>
