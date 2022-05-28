@@ -46,7 +46,7 @@ li,ul{
     color: #ffffff;
     font-size: 15px;
     font-weight: 600;
-    padding: 10px 27px 10px 27px;
+    padding: 10px 20px 10px 20px;
     border: 0px;
 }
 
@@ -200,8 +200,8 @@ li,ul{
     border-radius: 4px;
 }
 .status.disabled {
-    color: #59719d;
-    background-color: rgba(89, 113, 157, 0.2);
+    color: #ff073a;
+    background-color: rgba(255, 7, 58, 0.12549);
     padding: 5px;
     border-radius: 4px;
 }
@@ -209,6 +209,13 @@ li,ul{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.filter-row{
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 11px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
 .filter-row p{
     font-size: 16px;
