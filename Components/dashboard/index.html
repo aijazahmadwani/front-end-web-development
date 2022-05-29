@@ -27,15 +27,17 @@
         <div class="row display-table-row">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
                 <div class="logo">
-                    <a hef="home.html"><img src="https://www.bqe.com/bqe-assets/images/logos/logo-core-wht.svg" alt="bqe_logo"
-                            class="hidden-xs hidden-sm">
+                    <a hef="home.html"><img src="https://www.bqe.com/bqe-assets/images/logos/logo-core-wht.svg"
+                            alt="bqe_logo" class="hidden-xs hidden-sm">
                     </a>
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="#"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><span
-                                    class="hidden-xs hidden-sm">Events</span></a></li>
-                       
+                        <li class="active"><a href="#"><i class="glyphicon glyphicon-calendar"
+                                    aria-hidden="true"></i><span class="hidden-xs hidden-sm">Events</span></a></li>
+                        <li class=""><a href="#"><i class="glyphicon glyphicon-folder-open"
+                                    aria-hidden="true"></i><span class="hidden-xs hidden-sm">Documents</span></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -74,7 +76,8 @@
                         <h1>Events</h1>
                     </div>
                     <div class="col-xs-6 col-sm-6  col-md-6">
-                       <button class="add-event pull-right"  data-toggle="modal" data-target="#largeModal"> ADD EVENT</button>
+                        <button class="add-event pull-right" data-toggle="modal" data-target="#largeModal"> ADD
+                            EVENT</button>
                     </div>
                 </div>
 
@@ -91,38 +94,38 @@
                             </button>
                         </div>
                     </nav>
-                        <div class="col-md-4">
-                            <p>Search by event title</p>                    
-                            <div class="search hidden-sm hidden-xs">
-                                <div class=" form-group search-container">
-                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                                    <input type="text" placeholder="Search" id="search" class="form-control ">
-                                </div>
-
+                    <div class="col-md-4">
+                        <p>Search by event title</p>
+                        <div class="search hidden-sm hidden-xs">
+                            <div class=" form-group search-container">
+                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                <input type="text" placeholder="Search" id="search" class="form-control ">
                             </div>
+
                         </div>
-                        <div class="col-md-3">
-                           <p>Category</p>
-                           <select name="evCategoryId" id="category" class="form-control" formControlName="evCategoryId">
+                    </div>
+                    <div class="col-md-3">
+                        <p>Category</p>
+                        <select name="evCategoryId" id="category" class="form-control" formControlName="evCategoryId">
                             <option value="00000000-0000-0000-0000-000000000001">Webinar</option>
                             <option value="00000000-0000-0000-0000-000000000002">Industry Event</option>
                             <option value="00000000-0000-0000-0000-000000000003">Hangout</option>
                             <option value="00000000-0000-0000-0000-000000000004">Live Event</option>
                         </select>
-                        </div>
-                        <div class="col-md-3">
-                            <p>Status</p>
-                            <select name="evCategoryId" id="category" class="form-control" formControlName="evCategoryId">
-                                <option value="1">Active</option>
-                                <option value="NULL">Disabled</option>
-                            </select>
-                           
-                        </div>
-                        <div class="col-md-2" style="text-align: center;">
-                            <p></p>
-                            <br>
-                           <button class="add-event">SEARCH</button>
-                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Status</p>
+                        <select name="evCategoryId" id="category" class="form-control" formControlName="evCategoryId">
+                            <option value="1">Active</option>
+                            <option value="NULL">Disabled</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-2" style="text-align: center;">
+                        <p></p>
+                        <br>
+                        <button class="add-event">SEARCH</button>
+                    </div>
                 </div>
                 <div class="filter-row" style="margin-top: 20px;">
                     <div class="table-responsive ">
@@ -142,9 +145,31 @@
                                     <td>Rhythm Guitar</td>
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
+                                    <td class="edit-column"><span class="glyphicon glyphicon-edit" area-hidden="true"></span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Paul McCartney</td>
+                                    <td>Bass</td>
+                                    <td>BQE</td>
+                                    <td> <span class="status disabled">Disabled</span> </td>
+                                    <td  class="edit-column"><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>George Harrison</td>
+                                    <td>Lead Guitar</td>
+                                    <td>BQE</td>
+                                    <td> <span class="status active">Active</span> </td>
+                                    <td  class="edit-column"><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>John Lennon this is the title of the event which is going to held in december of this year</td>
+                                    <td>Rhythm Guitar</td>
+                                    <td>BQE</td>
+                                    <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-edit" area-hidden="true"></span></td>
                                 </tr>
-                             
+
                                 <tr>
                                     <td>Paul McCartney</td>
                                     <td>Bass</td>
@@ -158,14 +183,15 @@
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
-                                </tr><tr>
+                                </tr>
+                                <tr>
                                     <td>John Lennon</td>
                                     <td>Rhythm Guitar</td>
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-edit" area-hidden="true"></span></td>
                                 </tr>
-                             
+
                                 <tr>
                                     <td>Paul McCartney</td>
                                     <td>Bass</td>
@@ -179,14 +205,15 @@
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
-                                </tr><tr>
+                                </tr>
+                                <tr>
                                     <td>John Lennon</td>
                                     <td>Rhythm Guitar</td>
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-edit" area-hidden="true"></span></td>
                                 </tr>
-                             
+
                                 <tr>
                                     <td>Paul McCartney</td>
                                     <td>Bass</td>
@@ -200,35 +227,15 @@
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
-                                </tr><tr>
+                                </tr>
+                                <tr>
                                     <td>John Lennon</td>
                                     <td>Rhythm Guitar</td>
                                     <td>BQE</td>
                                     <td> <span class="status active">Active</span> </td>
                                     <td><span class="glyphicon glyphicon-edit" area-hidden="true"></span></td>
                                 </tr>
-                             
-                                <tr>
-                                    <td>Paul McCartney</td>
-                                    <td>Bass</td>
-                                    <td>BQE</td>
-                                    <td> <span class="status disabled">Disabled</span> </td>
-                                    <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
-                                </tr>
-                                <tr>
-                                    <td>George Harrison</td>
-                                    <td>Lead Guitar</td>
-                                    <td>BQE</td>
-                                    <td> <span class="status active">Active</span> </td>
-                                    <td><span class="glyphicon glyphicon-pencil" area-hidden="true"></span></td>
-                                </tr><tr>
-                                    <td>John Lennon</td>
-                                    <td>Rhythm Guitar</td>
-                                    <td>BQE</td>
-                                    <td> <span class="status active">Active</span> </td>
-                                    <td><span class="glyphicon glyphicon-edit" area-hidden="true"></span></td>
-                                </tr>
-                             
+
                                 <tr>
                                     <td>Paul McCartney</td>
                                     <td>Bass</td>
@@ -290,21 +297,21 @@
     </div>
     <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel">Large Modal</h4>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Large Modal</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Modal Body</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <h3>Modal Body</h3>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <script src="./main.js"></script>
 </body>
 

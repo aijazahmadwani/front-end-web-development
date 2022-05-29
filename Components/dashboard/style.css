@@ -228,3 +228,19 @@ tbody tr:hover{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: #f3f6fd !important;
 }
+table td{
+    height: 50px;
+    vertical-align: middle !important;
+    max-width: 400px;
+    font-size: 16px;
+}
+table th{
+    border-bottom: 1px solid #dedede;
+    height: 50px;
+    padding-left: 20px;
+    text-transform: uppercase;
+    vertical-align: middle !important;
+}
+.edit-column{
+    cursor: pointer;
+}
