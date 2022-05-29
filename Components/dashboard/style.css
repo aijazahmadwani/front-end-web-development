@@ -225,7 +225,7 @@ table th {
     vertical-align: middle !important;
 }
 
-.edit-column {
+.edit-column span{
     cursor: pointer;
 }
 
